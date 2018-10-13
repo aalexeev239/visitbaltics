@@ -27,8 +27,8 @@
 }
 
 :root {
-    --full-width: 1024px;
-    --padding: 72px;
+    --full-width: 1000px;
+    --padding: 60px;
     --offset: 20px;
 
     --font-size-xl: 134px;
@@ -87,15 +87,25 @@ img {
     margin-bottom: 13px;
 }
 
+.title_before-full {
+    margin-bottom: 4px;
+}
+
 .link {
     position: relative;
+    text-decoration: none;
+    border-bottom: 1px solid;
 }
 
 .link:after {
-    content: ">";
+    content: "";
     position: absolute;
+    background: url(../img/link.svg) no-repeat;
+    width: 7px;
+    height: 15px;
+    bottom: 5px;
+    right: -9px;
 }
-
 
 .note {
     position: absolute;
@@ -118,12 +128,18 @@ img {
 .intro {
     position: relative;
     width: 100%;
-    padding: 55px var(--padding) 40px var(--padding);
+    padding: 55px 0 40px 0;
 }
 
 .intro__title {
     margin-top: 45px;
     text-align: center;
+}
+
+.note_intro {
+    right: 247px;
+    top: 406px;
+    width: 90px;
 }
 
 .location {
@@ -161,7 +177,6 @@ img {
 }
 
 /*figures default*/
-
 .figure {
     position: relative;
 }
@@ -189,11 +204,14 @@ img {
     z-index: 1;
 }
 
+.full-figure__caption + .full-figure__caption {
+    left: 200px !important;
+}
+
 .list-figure {
     position: absolute;
     z-index: 1;
 }
-
 
 /*location tallinn*/
 .location_tallinn .location__intro .full-figure__caption {
@@ -276,7 +294,7 @@ img {
 
 .tallinn-town-hall .text {
     position: absolute;
-    top: 23px;
+    top: 10px;
     left: var(--offset);
     width: 200px;
 }
@@ -375,7 +393,7 @@ img {
 
 .tallinn-kadriorg .text {
     position: absolute;
-    top: 23px;
+    top: 10px;
     left: var(--offset);
     width: 200px;
     color: #bd6160;
@@ -385,9 +403,9 @@ img {
     left: 0;
     bottom: 0;
     width: 260px;
-    height: 250px;
+    height: 262px;
     background-image: url("../img/stickers/sticker3.png");
-    transform: translate(-17%, 42%) rotate(-21deg);
+    transform: translate(-8%, 36%) rotate(-21deg);
 }
 
 .tallinn-kadriorg__cols {
@@ -440,7 +458,7 @@ img {
     color: white;
 }
 
-.note_gates {
+.note_tower {
     top: 96px;
     right: 388px;
 }
@@ -489,7 +507,6 @@ img {
 }
 
 /*riga jugendstil*/
-
 .riga-jugendstil {
     margin-bottom: 90px;
 }
@@ -497,6 +514,7 @@ img {
 .riga-jugendstil .title,
 .riga-jugendstil .link {
     color: #4f70b3;
+    border-bottom-color: rgba(79, 112, 179, 0.4);
 }
 
 .riga-jugendstil .link {
@@ -573,7 +591,6 @@ img {
 .riga-food .title {
     color: #883a04;
 }
-
 
 .riga-food__cols {
     display: flex;
@@ -665,6 +682,45 @@ img {
     transform: translate(26%, 42%);
 }
 
+/*riga balsam*/
+.riga-balsam {
+    margin-bottom: 90px;
+}
+
+.riga-balsam .title {
+    color: #59377b;
+}
+
+.riga-balsam__cols {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.riga-balsam__left {
+    width: 139px;
+    margin-left: 28px;
+    margin-right: 20px;
+}
+
+.riga-balsam__center {
+    display: flex;
+    flex-direction: column;
+    width: 255px;
+    min-height: 377px;
+    margin-right: 70px;
+}
+
+.riga-balsam .text {
+    margin-bottom: auto;
+}
+
+.figure_candies .figure__caption {
+    width: 134px;
+    margin-top: 25px;
+    margin-left: 34px;
+}
+
 /*riga old town*/
 .riga-old-town {
     margin-bottom: 130px;
@@ -678,9 +734,9 @@ img {
     right: 0;
     top: 0;
     width: 260px;
-    height: 250px;
+    height: 262px;
     padding: 45px;
-    transform: translate(21%, -24%) rotate(-25deg);
+    transform: translate(8%, -26%) rotate(-25deg);
     background-image: url("../img/stickers/sticker3.png");
 }
 
@@ -695,34 +751,6 @@ img {
 }
 
 /*location vilnius*/
-
-/*riga old town*/
-.riga-old-town {
-    margin-bottom: 130px;
-}
-
-.riga-old-town .title {
-    color: #bd7479;
-}
-
-.riga-old-town .full-figure__caption {
-    right: 0;
-    top: 0;
-    width: 260px;
-    height: 250px;
-    padding: 45px;
-    transform: translate(21%, -24%) rotate(-25deg);
-    background-image: url("../img/stickers/sticker3.png");
-}
-
-.note_kramu {
-    bottom: 33px;
-    left: 20px;
-    width: 105px;
-    color: white;
-}
-
-/*vilnius*/
 .location_vilnius .location__title {
     color: #be3727;
 }
@@ -741,7 +769,43 @@ img {
 .location_vilnius .list-figure {
     bottom: 0;
     right: 0;
-    transform: translate(19%, 28%);
+    transform: translate(15%, 35%);
+}
+
+/*vilnius uzupis*/
+.vilnius-uzupis {
+    position: relative;
+    margin-bottom: 90px;
+}
+
+.vilnius-uzupis .title {
+    position: relative;
+    color: #78bdda;
+    z-index: 1;
+}
+
+.figure_emblem {
+    position: absolute;
+    left: 6px;
+    top: 93px;
+    z-index: 1;
+}
+
+.figure_angel {
+    position: absolute;
+    right: calc(var(--padding) * -1);
+    top: 15px;
+}
+
+.vilnius-uzupis__text {
+    position: relative;
+    margin: 314px auto 0;
+    z-index: 1;
+}
+
+.vilnius-uzupis .text {
+    margin-left: 353px;
+    width: 330px;
 }
 
 /*vilnius bikes*/
@@ -757,9 +821,9 @@ img {
     right: 0;
     top: 0;
     width: 260px;
-    height: 250px;
+    height: 262px;
     padding: 35px;
-    transform: translate(21%, -24%) rotate(-25deg);
+    transform: translate(8%, -26%) rotate(-25deg);
     background-image: url("../img/stickers/sticker3.png");
 }
 
@@ -832,7 +896,7 @@ img {
 
 .vilnius-church .text {
     position: absolute;
-    top: 23px;
+    top: 10px;
     left: var(--offset);
     width: 360px;
     color: white;
@@ -881,6 +945,82 @@ img {
 .figure_balloon {
     position: absolute;
     right: -20px;
-    top: 14px;
+    /*top: 14px;*/
+    top: 54px;
+    transform: translateY(-40px);
 }
 
+.animated {
+    -webkit-animation-duration: .8s;
+    animation-duration: .8s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes baloon {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-40px);
+    }
+}
+
+@keyframes baloon {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-40px);
+    }
+}
+
+.baloon {
+    -webkit-animation-name: baloon;
+    animation-name: baloon;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
+    visibility: visible !important;
+}
